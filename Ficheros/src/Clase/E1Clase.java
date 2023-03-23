@@ -17,7 +17,7 @@ public class E1Clase {
     public static void main(String[] args) {
         String texto = "El Real Madrid Club de Fútbol, más conocido simplemente"
                 + " como Real Madrid, es una entidad polideportiva con sede en"
-                + " Madrid, España.\n"+"Fue oficialmente registrada como club de "
+                + " Madrid, España.\n" + "Fue oficialmente registrada como club de "
                 + "fútbol por sus socios el 6 de marzo de 1902 con el objeto de "
                 + "la práctica y desarrollo de este deporte —si bien sus"
                 + " orígenes datan del año 1900,7​ y su denominación de "
@@ -46,29 +46,29 @@ public class E1Clase {
                 System.out.print("Introduzca el numero mayor: ");
                 mayor = teclado.nextInt();
             } while (mayor < 0);
-            do{
+            do {
                 System.out.print("Introduzca el numero menor: ");
                 menor = teclado.nextInt();
-            }while(menor < 0);
-        }while ( mayor < menor && mayor <= texto.length());
-        
+            } while (menor < 0);
+        } while (mayor < menor && mayor <= texto.length());
+
         System.out.println(texto.substring(menor, mayor));
-        
+
         //Apartado C)
         System.out.println(texto.split(" ").length);
-        
+
         //Apartado D)
         System.out.println(texto.split("/n").length);
-        
+
         //Apartado E)
         String[] textoSpliteado = texto.split(" ");
-        String cadenaFinal = textoSpliteado[textoSpliteado.length-1];
-        String textoFinal="";
-        for (int i = textoSpliteado.length-1; i > 0;i--){
-            textoFinal = textoSpliteado[i-1]+texto;
+        String cadenaFinal = textoSpliteado[textoSpliteado.length - 1];
+        String textoFinal = "";
+        for (int i = textoSpliteado.length - 1; i > 0; i--) {
+            textoFinal = textoSpliteado[i - 1] + texto;
         }
-        textoFinal = cadenaFinal+textoFinal;
+        textoFinal = cadenaFinal + textoFinal;
         System.out.println(textoFinal);
-        
+
     }
 }
