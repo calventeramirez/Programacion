@@ -20,13 +20,13 @@ public class E1Clase {
                 + " Madrid, España.\n" + "Fue oficialmente registrada como club de "
                 + "fútbol por sus socios el 6 de marzo de 1902 con el objeto de "
                 + "la práctica y desarrollo de este deporte —si bien sus"
-                + " orígenes datan del año 1900,7​ y su denominación de "
+                + " orígenes datan del año 1900,​ y su denominación de "
                 + "(Sociedad) Madrid Foot-ball Club de octubre de 1901—, siendo "
                 + "el quinto club fundado en la capital.\nTuvo a Julián "
                 + "Palacios y los hermanos Juan Padrós y Carlos Padrós como "
                 + "principales valedores de su creación.​\nIdentificado por su "
                 + "color blanco —del que recibe el apelativo de «blancos» o "
-                + "«merengues»—,1​2​ es uno de los cuatro clubes profesionales de "
+                + "«merengues»—, es uno de los cuatro clubes profesionales de "
                 + "fútbol del país cuya entidad jurídica no es la de sociedad "
                 + "anónima deportiva (S. A. D.)\nya que su propiedad recae "
                 + "en sus más de 90 000 socios. Otra salvedad comparte con el "
@@ -36,7 +36,7 @@ public class E1Clase {
                 + " establecimiento en 1929.​";
         //Apartado A)
         String cadena = texto.replace(" ", "");
-        System.out.println(cadena.split("").length);
+        System.out.println(cadena.length());
 
         //Apartado B)
         int mayor = 0, menor = 0;
@@ -58,17 +58,12 @@ public class E1Clase {
         System.out.println(texto.split(" ").length);
 
         //Apartado D)
-        System.out.println(texto.split("/n").length);
+        System.out.println(texto.split(System.lineSeparator()).length);//System.lineSeparator() == /n
 
         //Apartado E)
-        String[] textoSpliteado = texto.split(" ");
-        String cadenaFinal = textoSpliteado[textoSpliteado.length - 1];
-        String textoFinal = "";
-        for (int i = textoSpliteado.length - 1; i > 0; i--) {
-            textoFinal = textoSpliteado[i - 1] + texto;
-        }
-        textoFinal = cadenaFinal + textoFinal;
-        System.out.println(textoFinal);
+        String ultimaPalabra = texto.substring(texto.lastIndexOf(" ") + 1);
+        String resultado = ultimaPalabra + texto.substring(0, texto.lastIndexOf(" "));
+        System.out.println(resultado);
 
     }
 }
