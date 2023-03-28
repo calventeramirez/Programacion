@@ -32,6 +32,7 @@ public class ejercicio112 {
             System.out.println("Error en la escritura: " + e.getMessage());
         } catch (InputMismatchException e) {
             System.out.println("Error al introducir el dato: " + e.getMessage());
+            teclado.nextLine();
         } finally {
             try {
                 if (miBuffer != null) {
