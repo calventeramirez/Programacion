@@ -44,7 +44,7 @@ public class ejercicio117 {
                     lector.close();
                 }
             } catch (IOException e) {
-                System.out.println("Error. No se ha podido leer o cerrar el fichero");
+                System.out.println("Error. No se ha podido leer o cerrar el fichero: ");
                 System.out.println(e.getMessage());
             }
         }
