@@ -23,7 +23,7 @@ public class ejercicio113 {
                 texto = t.nextLine();
                 miBuffer.write(texto);
                 miBuffer.newLine();
-            } while (texto.split("").length != 1 && !texto.split("").equals(System.lineSeparator()));
+            } while (!texto.equals(""));
         } catch (IOException e) {
             System.out.println("Error no se ha podido crear el fichero: " + e.getMessage());
         } catch (InputMismatchException e) {
