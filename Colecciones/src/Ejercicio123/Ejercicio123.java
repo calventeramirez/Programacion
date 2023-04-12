@@ -91,7 +91,7 @@ public class Ejercicio123 {
         System.out.println("Lista menor que la media: [");
         for (Integer elemento : lista) {
             if (elemento < media) {
-                System.out.println(elemento + " ");
+                System.out.print(elemento + " ");
             }
         }
         System.out.println("]");
