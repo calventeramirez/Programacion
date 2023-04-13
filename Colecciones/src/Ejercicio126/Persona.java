@@ -88,7 +88,7 @@ public class Persona {
     }
 
     public boolean equals(Persona p) {
-        return this.nombre.equalsIgnoreCase(p.nombre) && this.apellido.equalsIgnoreCase(p.apellido) && this.dni.equalsIgnoreCase(p.dni) && this.sexo == p.sexo && this.peso == p.peso;
+        return this.dni.equalsIgnoreCase(p.dni);
     }
 
 }
