@@ -85,6 +85,7 @@ public class PadronHabitantes {
             System.out.println("DNI?");
 
             do {
+                teclado.nextLine();
                 System.out.print(">>");
                 dni = teclado.nextLine();
                 rep = false;
