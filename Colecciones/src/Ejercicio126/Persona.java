@@ -90,5 +90,15 @@ public class Persona {
     public boolean equals(Persona p) {
         return this.dni.equalsIgnoreCase(p.dni);
     }
-
+    
+    public int compareTo(Persona p){
+        int salida = 0;
+        if(this.dni.equalsIgnoreCase(p.getDni())){
+            salida = 1;
+        }else if(!this.dni.equalsIgnoreCase(dni)){
+            salida = -1;
+        }
+        
+        return salida;
+    }
 }

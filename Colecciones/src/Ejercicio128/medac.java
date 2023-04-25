@@ -2,6 +2,7 @@ package Ejercicio128;
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -55,14 +56,23 @@ public class medac {
         }
 
         //Media de hombres
-        double sumH = 0;
-        sumH += mapa.get(0);
-
-        double sumM = 0;
-        sumM = mapa.get(1);
-
-        System.out.println("La media de sueldos de hombres es: " + (sumH));
-        System.out.println("La media de sueldos de mujer es: " + (sumM));
+         double sumH = 0;
+         double sumM = 0;
+         double contH =0;
+         double contM = 0;
+        for (Map.Entry<Integer, Double> m : mapa.entrySet()) {
+            if(m.getKey() == 0){
+                sumH += m.getValue();
+                contH++;
+            }else{
+                sumM += m.getValue();
+                contM++;
+            }
+           
+        }
+ 
+        System.out.println("La media de sueldos de hombres es: " + (sumH/contH));
+        System.out.println("La media de sueldos de mujer es: " + (sumM/contM));
     }
 
 }
