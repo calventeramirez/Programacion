@@ -1,5 +1,7 @@
 package Clase;
 
+import java.awt.Color;
+
 /**
  *
  * @author usuario
@@ -26,6 +28,8 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
         textoInformativo = new javax.swing.JLabel();
         campoNombre = new javax.swing.JTextField();
         botonSalir = new javax.swing.JButton();
+        campoSalida = new javax.swing.JTextField();
+        botonSaludo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -38,6 +42,11 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
         campoNombre.setBackground(new java.awt.Color(255, 0, 0));
         campoNombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         campoNombre.setToolTipText("Holaaaaa");
+        campoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNombreActionPerformed(evt);
+            }
+        });
 
         botonSalir.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         botonSalir.setForeground(new java.awt.Color(102, 255, 102));
@@ -49,6 +58,25 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
             }
         });
 
+        campoSalida.setFocusable(false);
+        campoSalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoSalidaActionPerformed(evt);
+            }
+        });
+
+        botonSaludo.setText("Saludar");
+        botonSaludo.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                botonSaludoStateChanged(evt);
+            }
+        });
+        botonSaludo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSaludoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -56,15 +84,18 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoSalida)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(textoInformativo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 217, Short.MAX_VALUE))
                     .addComponent(campoNombre))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(botonSaludo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonSalir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,8 +105,12 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botonSalir)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addComponent(campoSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonSalir)
+                    .addComponent(botonSaludo))
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -85,10 +120,38 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         // TODO add your handling code here:
         System.out.println("Chao pescado");
+        //Para cerrar con el boton
         this.setVisible(false);
-        this.disableEvents(EXIT_ON_CLOSE);
-        //System.exit(0);
+        this.dispose();
+
     }//GEN-LAST:event_botonSalirActionPerformed
+
+    private void campoSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSalidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoSalidaActionPerformed
+
+    private void botonSaludoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSaludoActionPerformed
+        // TODO add your handling code here:
+        if (!campoNombre.getText().isEmpty()) {
+            botonSaludo.setEnabled(true);
+            campoSalida.setText("Buenos dias " + campoNombre.getText());
+            campoSalida.setForeground(Color.cyan);
+            campoNombre.setText("");
+            campoSalida.setEnabled(true);
+            campoSalida.setFocusable(true);
+        }else{
+            campoSalida.setText("Introduzca un nombre en el campo de arriba.");
+        }
+
+    }//GEN-LAST:event_botonSaludoActionPerformed
+
+    private void botonSaludoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_botonSaludoStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSaludoStateChanged
+
+    private void campoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,7 +190,9 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonSalir;
+    private javax.swing.JButton botonSaludo;
     private javax.swing.JTextField campoNombre;
+    private javax.swing.JTextField campoSalida;
     private javax.swing.JLabel textoInformativo;
     // End of variables declaration//GEN-END:variables
 }
