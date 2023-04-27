@@ -25,10 +25,20 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupito = new javax.swing.ButtonGroup();
         textoInformativo = new javax.swing.JLabel();
         campoNombre = new javax.swing.JTextField();
         botonSalir = new javax.swing.JButton();
         botonSaludo = new javax.swing.JButton();
+        CheckBox1 = new javax.swing.JCheckBox();
+        CheckBox2 = new javax.swing.JCheckBox();
+        CheckBox3 = new javax.swing.JCheckBox();
+        labelAlvaro = new javax.swing.JLabel();
+        radio1 = new javax.swing.JRadioButton();
+        radio2 = new javax.swing.JRadioButton();
+        radio3 = new javax.swing.JRadioButton();
+        radio4 = new javax.swing.JRadioButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -121,6 +131,39 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
             }
         });
 
+        CheckBox1.setBackground(new java.awt.Color(255, 255, 0));
+        CheckBox1.setText("Furgol");
+        CheckBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CheckBox1ItemStateChanged(evt);
+            }
+        });
+
+        CheckBox2.setText("Coches");
+
+        CheckBox3.setText("Monologos");
+
+        labelAlvaro.setText("Como se siente Alvaro");
+
+        grupito.add(radio1);
+        radio1.setText("Hombre");
+
+        grupito.add(radio2);
+        radio2.setText("Mujer");
+
+        grupito.add(radio3);
+        radio3.setText("No binario");
+
+        grupito.add(radio4);
+        radio4.setText("Helicoptero Apache");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose your destiny...", "Jaén", "Cordoba", "Sevilla", "Huelva", "Cadiz", "Málaga", "Granada", "Almeria" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,28 +172,67 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(campoNombre)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(botonSalir))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(textoInformativo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonSaludo))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radio2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(radio4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(radio3))
+                            .addComponent(radio1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(botonSaludo)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CheckBox3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(CheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelAlvaro, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(textoInformativo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoInformativo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonSaludo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botonSaludo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CheckBox1)
+                    .addComponent(labelAlvaro))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CheckBox2)
+                    .addComponent(radio1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radio2)
+                    .addComponent(CheckBox3))
+                .addGap(18, 18, 18)
+                .addComponent(radio3)
+                .addGap(18, 18, 18)
+                .addComponent(radio4)
+                .addGap(49, 49, 49)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addComponent(botonSalir)
                 .addContainerGap())
         );
@@ -171,6 +253,15 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
     private void botonSaludoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSaludoActionPerformed
         // TODO add your handling code here:
         System.out.println("Action Performed");
+        if(CheckBox1.isSelected()){
+            CheckBox1.setSelected(false);
+            jComboBox1.addItem("Nacho");//Añade un elemento
+        }else{
+            CheckBox1.setSelected(true);
+            /*jComboBox1.removeItemAt(jComboBox1.getSelectedIndex());//Borra el elemento seleccionado*/
+            jComboBox1.removeItem("Nacho");//borra el elemento NAcho
+        }
+        
 
     }//GEN-LAST:event_botonSaludoActionPerformed
 
@@ -248,6 +339,19 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
         System.out.println("Me muevo");
     }//GEN-LAST:event_botonSaludoMouseDragged
 
+    private void CheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CheckBox1ItemStateChanged
+        // TODO add your handling code here:
+        System.out.println("Me gustan las pastillas azules");
+    }//GEN-LAST:event_CheckBox1ItemStateChanged
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Se ha cambiado el elemento");
+        System.out.println(jComboBox1.getSelectedIndex());//seleccionar el indice
+        System.out.println(jComboBox1.getSelectedItem());//Te da la representacion del objeto seleccionado
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,9 +388,19 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CheckBox1;
+    private javax.swing.JCheckBox CheckBox2;
+    private javax.swing.JCheckBox CheckBox3;
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonSaludo;
     private javax.swing.JTextField campoNombre;
+    private javax.swing.ButtonGroup grupito;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel labelAlvaro;
+    private javax.swing.JRadioButton radio1;
+    private javax.swing.JRadioButton radio2;
+    private javax.swing.JRadioButton radio3;
+    private javax.swing.JRadioButton radio4;
     private javax.swing.JLabel textoInformativo;
     // End of variables declaration//GEN-END:variables
 }
