@@ -12,6 +12,7 @@ public class Ejercicio130 {
         String[] misPalabras;
         String linea = "";
 
+        System.out.println("Introduzca frases hasta darle un ENTER vacio: ");
         do {
             linea = t.nextLine();
             if (!linea.equalsIgnoreCase("")) {
