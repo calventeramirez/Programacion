@@ -46,7 +46,7 @@ public class ejercicio140 extends javax.swing.JFrame {
 
         textDolares.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        desplegable.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dolares a Euros", "Euros a Dolares", " " }));
+        desplegable.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dolares a Euros", "Euros a Dolares" }));
 
         botonConversion.setText("Conversión");
         botonConversion.addActionListener(new java.awt.event.ActionListener() {
