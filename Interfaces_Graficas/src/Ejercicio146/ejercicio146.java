@@ -97,6 +97,7 @@ public class ejercicio146 extends javax.swing.JFrame {
         } else {
             text.setText(Integer.toString(Slider.getValue()));
             text.setForeground(Color.green);
+            isAlwaysOnTopSupported();
         }
     }//GEN-LAST:event_SliderMouseReleased
 
