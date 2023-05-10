@@ -1,6 +1,8 @@
 package Ejercicio146;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,8 +13,11 @@ public class ejercicio146 extends javax.swing.JFrame {
     /**
      * Creates new form ejercicio146
      */
+    private Dimension originalSize;
+
     public ejercicio146() {
         initComponents();
+        originalSize = Slider.getPreferredSize();
     }
 
     /**
@@ -27,6 +32,9 @@ public class ejercicio146 extends javax.swing.JFrame {
         Slider = new javax.swing.JSlider();
         BotonReinicio = new javax.swing.JButton();
         text = new javax.swing.JTextField();
+        botonAcercaDE = new javax.swing.JButton();
+        labelDificultad = new javax.swing.JLabel();
+        desplegableDificultad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +57,26 @@ public class ejercicio146 extends javax.swing.JFrame {
         text.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        botonAcercaDE.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        botonAcercaDE.setText("Acerca de");
+        botonAcercaDE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAcercaDEActionPerformed(evt);
+            }
+        });
+
+        labelDificultad.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        labelDificultad.setText("Elija la dificultad:");
+
+        desplegableDificultad.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        desplegableDificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        desplegableDificultad.setSelectedIndex(2);
+        desplegableDificultad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desplegableDificultadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,13 +91,31 @@ public class ejercicio146 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(text)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelDificultad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(desplegableDificultad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonAcercaDE)
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(botonAcercaDE, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(20, Short.MAX_VALUE)
+                        .addComponent(labelDificultad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(desplegableDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)))
                 .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Slider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonReinicio))
@@ -100,6 +146,31 @@ public class ejercicio146 extends javax.swing.JFrame {
             //final
         }
     }//GEN-LAST:event_SliderMouseReleased
+
+    private void desplegableDificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desplegableDificultadActionPerformed
+        // TODO add your handling code here:
+        if (Integer.valueOf(desplegableDificultad.getSelectedItem().toString()) == 1) {
+            Slider.setEnabled(true);
+            text.setText("");
+            Dimension d = new Dimension((int) (originalSize.width * 0.1), Slider.getHeight());
+            Slider.setSize(d);
+        } else if (Integer.valueOf(desplegableDificultad.getSelectedItem().toString()) == 2) {
+            Slider.setEnabled(true);
+            text.setText("");
+            Dimension d = new Dimension((int) (originalSize.width * 0.5), Slider.getHeight());
+            Slider.setSize(d);
+        } else {
+            Slider.setEnabled(true);
+            text.setText("");
+            Dimension d = new Dimension(originalSize.width , Slider.getHeight());
+            Slider.setSize(d);
+        }
+    }//GEN-LAST:event_desplegableDificultadActionPerformed
+
+    private void botonAcercaDEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAcercaDEActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Pablo Jesús Calvente Ramírez", "Acerca de...", JOptionPane.DEFAULT_OPTION);
+    }//GEN-LAST:event_botonAcercaDEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,6 +210,9 @@ public class ejercicio146 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonReinicio;
     private javax.swing.JSlider Slider;
+    private javax.swing.JButton botonAcercaDE;
+    private javax.swing.JComboBox<String> desplegableDificultad;
+    private javax.swing.JLabel labelDificultad;
     private javax.swing.JTextField text;
     // End of variables declaration//GEN-END:variables
 }
