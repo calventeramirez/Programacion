@@ -1,6 +1,7 @@
 package Clase;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,6 +40,7 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
         radio3 = new javax.swing.JRadioButton();
         radio4 = new javax.swing.JRadioButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        botonEnviar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -164,6 +166,13 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
             }
         });
 
+        botonEnviar.setText("Enviar");
+        botonEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEnviarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -177,7 +186,9 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonSaludo))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(37, 37, 37)
+                        .addComponent(botonEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radio2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +204,7 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
                         .addComponent(CheckBox3)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(CheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelAlvaro, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))
@@ -228,13 +239,19 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
                     .addComponent(CheckBox3))
                 .addGap(18, 18, 18)
                 .addComponent(radio3)
-                .addGap(18, 18, 18)
-                .addComponent(radio4)
-                .addGap(49, 49, 49)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
-                .addComponent(botonSalir)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(radio4)
+                        .addGap(49, 49, 49)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
+                        .addComponent(botonSalir)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(botonEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -352,6 +369,20 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void botonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarActionPerformed
+        // TODO add your handling code here:
+        //JOptionPane.showMessageDialog(this, "Soy una golosa modal", "Titulo personalizado", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(this, "Soy una golosa modal", "Titulo personalizado", JOptionPane.WARNING_MESSAGE);
+        //JOptionPane.showMessageDialog(this, "Soy una golosa modal", "Titulo personalizado", JOptionPane.ERROR_MESSAGE);
+        //String res = JOptionPane.showInputDialog(this, "Dame tu nombre: ");
+        int num = JOptionPane.showConfirmDialog(this, "Estas seguro?");
+        //Se crea instancia de la nueva ventana
+        Golosa  nueva = new Golosa(campoNombre.getText(), jComboBox1.getSelectedItem().toString());
+        nueva.setVisible(true);
+        //Ocultamos la ventana actual
+        this.setVisible(false);
+    }//GEN-LAST:event_botonEnviarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,6 +422,7 @@ public class MiPrimeraVentana extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckBox1;
     private javax.swing.JCheckBox CheckBox2;
     private javax.swing.JCheckBox CheckBox3;
+    private javax.swing.JButton botonEnviar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonSaludo;
     private javax.swing.JTextField campoNombre;
